@@ -72,7 +72,7 @@ bun dev
 
 ## 🛠️ Технологии
 
-- [Next.js 14](https://nextjs.org/) — React фреймворк
+- [Next.js 15](https://nextjs.org/) — React фреймворк
 - [TypeScript](https://www.typescriptlang.org/) — Типизированный JavaScript
 - [Tailwind CSS](https://tailwindcss.com/) — Утилитарный CSS фреймворк
 - [shadcn/ui](https://ui.shadcn.com/) — Компоненты пользовательского интерфейса
