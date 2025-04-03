@@ -2,6 +2,8 @@
   <img src="/public/logo.svg" alt="CodeFlow Logo" width="200" height="200" />
   
   # CodeFlow
+На данный момент стадия: Активная разработка 🚀
+  
 
 ### 🚀 Мощная платформа для управления IT-проектами
 
