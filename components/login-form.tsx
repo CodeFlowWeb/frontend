@@ -11,7 +11,7 @@ export function LoginForm({
   const handleSignIn = async () => {
     "use server";
     await signIn("github", {
-      redirectTo: "/d",
+      redirectTo: "/d/greeting",
     });
   };
 

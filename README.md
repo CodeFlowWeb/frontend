@@ -1,36 +1,117 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<div align="center">
+  <img src="/public/logo.svg" alt="CodeFlow Logo" width="200" height="200" />
+  
+  # CodeFlow
 
-## Getting Started
+### 🚀 Мощная платформа для управления IT-проектами
 
-First, run the development server:
+[![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
+[![shadcn/ui](https://img.shields.io/badge/shadcn/ui-latest-black?style=for-the-badge)](https://ui.shadcn.com/)
+
+[О проекте](#о-проекте) · [Установка](#быстрый-старт) · [Технологии](#технологии)
+
+</div>
+
+---
+
+## ✨ Особенности
+
+- 📋 **Канбан-доски** — Визуализируйте рабочий процесс с помощью настраиваемых досок и карточек
+- 👥 **Командная работа** — Эффективное взаимодействие и отслеживание прогресса
+- 📚 **Документация** — Встроенная wiki с поддержкой Markdown
+- 🔄 **CI/CD интеграция** — Связь с GitHub Actions, Jenkins и другими CI системами
+- 🎯 **Спринты** — Планирование и отслеживание спринтов
+- 📊 **Аналитика** — Подробные отчеты и метрики производительности
+- 🌙 **Темная тема** — Поддержка светлой и темной темы
+- 📱 **Адаптивный дизайн** — Работает на всех устройствах
+
+## 🚀 Быстрый старт
+
+1. **Клонируйте репозиторий**
+
+```bash
+git clone https://github.com/your-username/code-flow.git
+cd code-flow
+```
+
+2. **Установите зависимости**
+
+```bash
+# С помощью npm
+npm install
+
+# Или с помощью Bun
+bun install
+```
+
+3. **Настройте переменные окружения**
+
+```bash
+cp .env.example .env.local
+```
+
+Заполните `.env.local` необходимыми значениями:
+
+```env
+NEXTAUTH_URL=http://localhost:3000
+GITHUB_ID=your_github_client_id
+GITHUB_SECRET=your_github_client_secret
+```
+
+4. **Запустите сервер разработки**
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+# или
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Откройте [http://localhost:3000](http://localhost:3000) в браузере.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Технологии
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- [Next.js 14](https://nextjs.org/) — React фреймворк
+- [TypeScript](https://www.typescriptlang.org/) — Типизированный JavaScript
+- [Tailwind CSS](https://tailwindcss.com/) — Утилитарный CSS фреймворк
+- [shadcn/ui](https://ui.shadcn.com/) — Компоненты пользовательского интерфейса
+- [NextAuth.js](https://next-auth.js.org/) — Аутентификация
+- [Prisma](https://www.prisma.io/) — ORM для базы данных
+- [tRPC](https://trpc.io/) — End-to-end типизированный API
 
-## Learn More
+## 🤝 Вклад в проект
 
-To learn more about Next.js, take a look at the following resources:
+Мы приветствуем вклад в развитие CodeFlow! Вот как вы можете помочь:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Форкните репозиторий
+2. Создайте ветку для вашей фичи (`git checkout -b feature/amazing-feature`)
+3. Зафиксируйте изменения (`git commit -m 'feat: add amazing feature'`)
+4. Отправьте изменения в ваш форк (`git push origin feature/amazing-feature`)
+5. Откройте Pull Request
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Пожалуйста, ознакомьтесь с нашим [руководством по внесению изменений](/CONTRIBUTING.md).
 
-## Deploy on Vercel
+## 📄 Лицензия
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Распространяется под лицензией MIT. Смотрите [`LICENSE`](/LICENSE) для получения дополнительной информации.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 💖 Благодарности
+
+CodeFlow вдохновлен и использует множество отличных open-source проектов:
+
+- [Trello](https://trello.com/) — За вдохновение в дизайне канбан-досок
+- [GitHub Projects](https://github.com/features/projects) — За идеи интеграции с системой контроля версий
+- [Linear](https://linear.app/) — За великолепный UX
+- [Next.js](https://nextjs.org/) — За превосходный фреймворк
+- [shadcn/ui](https://ui.shadcn.com/) — За потрясающие компоненты пользовательского интерфейса
+
+## 📬 Связаться с нами
+
+- GitHub - [your-username/code-flow](https://github.com/your-username/code-flow)
+
+---
+
+<div align="center">
+  <sub>Built with ❤️ by the CodeFlow Team.</sub>
+</div>

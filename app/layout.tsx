@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { ServiceWorkerProvider } from "@/components/service-worker-provider";
 
 export const metadata: Metadata = {
-  title: "Code FLow",
+  title: "Code Flow",
   description: "Code flow",
 };
 
@@ -21,6 +22,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <ServiceWorkerProvider />
           {children}
         </ThemeProvider>
       </body>

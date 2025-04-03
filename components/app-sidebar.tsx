@@ -31,7 +31,7 @@ const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/placeholder.svg",
   },
   teams: [
     {
@@ -156,7 +156,16 @@ const data = {
   ],
 };
 
-export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({
+  email,
+  image,
+  name,
+  ...props
+}: React.ComponentProps<typeof Sidebar> & {
+  email?: string | null;
+  image?: string | null;
+  name?: string | null;
+}) {
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
@@ -167,7 +176,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
-        <NavUser user={data.user} />
+        <NavUser
+          user={{
+            name: name || data.user.name,
+            email: email || data.user.email,
+            avatar: image || data.user.avatar,
+          }}
+        />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
