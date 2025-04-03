@@ -12,6 +12,14 @@ interface Routes {
     subscription: RouteType;
     docs: RouteType;
   };
+  my: {
+    title: string;
+    url: string;
+    settings: RouteType;
+    subscription: RouteType;
+    notificantions: RouteType;
+    billing: RouteType;
+  };
 }
 
 export const routes: Routes = {
@@ -33,6 +41,26 @@ export const routes: Routes = {
     docs: {
       title: "Документация",
       url: "/d/docs",
+    },
+  },
+  my: {
+    title: "Мой профиль",
+    url: "/my",
+    settings: {
+      title: "Настройки",
+      url: "/my/settings",
+    },
+    subscription: {
+      title: "Подписка",
+      url: "/my/subscription",
+    },
+    notificantions: {
+      title: "Уведомления",
+      url: "/my/notifications",
+    },
+    billing: {
+      title: "Выставление счетов",
+      url: "/my/billing",
     },
   },
 };

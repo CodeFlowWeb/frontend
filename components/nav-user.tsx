@@ -27,6 +27,7 @@ import {
 } from "@/components/ui/sidebar";
 import { signOut } from "@/auth";
 import NavLogoutItem from "./nav-logout-item";
+import { redirect } from "next/navigation";
 
 export function NavUser({
   user,
@@ -38,6 +39,10 @@ export function NavUser({
   };
 }) {
   const { isMobile } = useSidebar();
+
+  const handleAccountClick = () => {
+    redirect("/my");
+  };
 
   return (
     <SidebarMenu>
@@ -94,7 +99,7 @@ export function NavUser({
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
-              <DropdownMenuItem>
+              <DropdownMenuItem onClick={handleAccountClick}>
                 <BadgeCheck />
                 Аккаунт
               </DropdownMenuItem>

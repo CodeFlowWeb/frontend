@@ -25,26 +25,35 @@ export default async function ProtectedPageLayout({
   activePage: string;
 }>) {
   type PageInfo = {
-    parent?: typeof routes.d;
-    current: typeof routes.d | RouteType;
+    parent?: (typeof routes)[keyof typeof routes];
+    current: (typeof routes)[keyof typeof routes] | RouteType;
     isRoot: boolean;
+    section: keyof typeof routes;
   };
 
   const getCurrentPageInfo = (): PageInfo | null => {
     const [section, page] = activePage.split("/");
-    if (section === "d") {
+
+    if (section in routes) {
+      const currentSection = routes[section as keyof typeof routes];
+
       if (!page) {
         return {
-          current: routes.d,
+          current: currentSection,
           isRoot: true,
+          section: section as keyof typeof routes,
         };
       }
-      const subpage = routes.d[page as keyof typeof routes.d] as RouteType;
+
+      const subpage = currentSection[
+        page as keyof typeof currentSection
+      ] as RouteType;
       if (subpage && "title" in subpage) {
         return {
-          parent: routes.d,
+          parent: currentSection,
           current: subpage,
           isRoot: false,
+          section: section as keyof typeof routes,
         };
       }
     }
@@ -73,8 +82,8 @@ export default async function ProtectedPageLayout({
                 {pageInfo && (
                   <>
                     <BreadcrumbItem className="hidden md:block">
-                      <BreadcrumbLink href={routes.d.url}>
-                        {routes.d.title}
+                      <BreadcrumbLink href={routes[pageInfo.section].url}>
+                        {routes[pageInfo.section].title}
                       </BreadcrumbLink>
                     </BreadcrumbItem>
                     {!pageInfo.isRoot && (
