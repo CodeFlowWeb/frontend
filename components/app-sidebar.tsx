@@ -5,7 +5,6 @@ import {
   AudioWaveform,
   BookOpen,
   Bot,
-  Command,
   Frame,
   GalleryVerticalEnd,
   Map,
@@ -35,39 +34,34 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
+      name: "Проект не выбран",
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: "",
     },
     {
       name: "Acme Corp.",
       logo: AudioWaveform,
       plan: "Startup",
     },
-    {
-      name: "Evil Corp.",
-      logo: Command,
-      plan: "Free",
-    },
   ],
   navMain: [
     {
-      title: "Playground",
-      url: "#",
+      title: "Главная",
+      url: "/d",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
+          title: "Приветствие",
+          url: "/d/greeting",
         },
         {
-          title: "Starred",
-          url: "#",
+          title: "Новый проект",
+          url: "/d/new-project",
         },
         {
-          title: "Settings",
-          url: "#",
+          title: "Присоединиться к проекту",
+          url: "/d/connect-project",
         },
       ],
     },

@@ -1,19 +1,38 @@
-"use client ";
+"use client";
 
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { signIn } from "@/auth";
+import { handleGithubSignIn } from "@/app/server-actions/auth";
+import { AuthError } from "@/types/auth.types";
+import { toast } from "sonner";
+import { useEffect } from "react";
 
-export function LoginForm({
-  className,
-  ...props
-}: React.ComponentPropsWithoutRef<"form">) {
-  const handleSignIn = async () => {
-    "use server";
-    await signIn("github", {
-      redirectTo: "/d/greeting",
-    });
+interface LoginFormProps extends React.ComponentPropsWithoutRef<"form"> {
+  authError?: { [key: string]: string | string[] | undefined };
+}
+
+export function LoginForm({ className, authError, ...props }: LoginFormProps) {
+  const handleSignIn = () => {
+    handleGithubSignIn();
   };
+
+  useEffect(() => {
+    const checkError = async () => {
+      const error = await authError;
+
+      if (error) {
+        if (Array.isArray(authError)) {
+          toast.error("Ошибка авторизации");
+        } else if (error.error === AuthError.NOT_AUTHENTICATED) {
+          toast.error("Упс.. Кажется вам стоит авторизироваться");
+        } else if (error.error === AuthError.NOT_AUTHORIZED) {
+          toast.error("У вас нет доступа к этой странице");
+        }
+      }
+    };
+
+    checkError();
+  }, [authError]);
 
   return (
     <form className={cn("flex flex-col gap-6", className)} {...props}>

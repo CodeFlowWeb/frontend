@@ -14,7 +14,7 @@ import { Rocket, Users, Kanban, Book, ArrowRight } from "lucide-react";
 
 export default async function Page() {
   const session = await auth();
-  if (!session?.user) return redirect("/auth");
+  if (!session?.user) return redirect("/auth?error=not-authenticated");
 
   return (
     <ProtectedPageLayout activePage="d/greeting">

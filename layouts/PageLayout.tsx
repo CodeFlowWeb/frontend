@@ -63,7 +63,7 @@ export default async function ProtectedPageLayout({
   const pageInfo = getCurrentPageInfo();
   const session = await auth();
 
-  if (!session?.user) return redirect("/auth");
+  if (!session?.user) return redirect("/auth?error=not-authenticated");
 
   return (
     <SidebarProvider>

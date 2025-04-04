@@ -1,0 +1,47 @@
+{
+  /* 
+  
+  Снипеты созданы для упрощения и ускорения разработки в проекте.
+  Снипеты созданы для использования в редакторе кода Visual Studio Code.
+  Документация по созданию сниппетов: https://code.visualstudio.com/docs/editor/userdefinedsnippets
+  Документация по нашим сниппетам: https://github.com/nntdgrss/code-flow (Comming soon)
+
+
+  */
+
+  "Создать приватный компонент (SSR)": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "cf-pc",
+    "body": [
+      "import ProtectedPageLayout from \"@/layouts/PageLayout\";",
+      "import { auth } from \"@/auth\";",
+      "import { redirect } from \"next/navigation\";",
+      "",
+      "  export default async function Page() {",
+      "    const session = await auth();",
+      "",
+      "    if (!session) {",
+      "     return redirect(\"/auth?error=not-authenticated\")",
+      "    }",
+      "",
+      "  return (",
+      "    <ProtectedPageLayout activePage=\"$1\">",
+      "      <div>Content</div>",
+      "    </ProtectedPageLayout>",
+      "  )",
+      "}"
+    ],
+    "description": "Создать приватный серверный компонент с проверкой прав пользователя и оберткой в ProtectedPageLayout"
+  },
+  "Создать компонент (SSR)": {
+    "scope": "javascript,typescript,javascriptreact,typescriptreact",
+    "prefix": "cf-c",
+    "body": [
+      "export default function $1() {",
+      "  return (",
+      "    <div>Content</div>",
+      "  )",
+      "}"
+    ]
+  }
+}

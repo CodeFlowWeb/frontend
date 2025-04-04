@@ -11,13 +11,17 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { LogOut } from "lucide-react";
 
-export async function LogoutButton() {
+export async function LogoutButton({ className }: { className?: string }) {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button variant="destructive" className="cursor-pointer">
+        <Button
+          variant="destructive"
+          className={cn("cursor-pointer", className)}
+        >
           <LogOut className="w-4 h-4 mr-2" />
           Выйти
         </Button>

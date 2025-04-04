@@ -1,15 +1,19 @@
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import ProtectedPageLayout from "@/layouts/PageLayout";
 
 export default async function Page() {
   return (
     <ProtectedPageLayout activePage="d">
-      <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
-        <div className="grid auto-rows-min gap-4 md:grid-cols-3">
-          <div className="aspect-video rounded-xl bg-muted/50" />
-          <div className="aspect-video rounded-xl bg-muted/50" />
-          <div className="aspect-video rounded-xl bg-muted/50" />
-        </div>
-        <div className="min-h-[100vh] flex-1 rounded-xl bg-muted/50 md:min-h-min" />
+      <div className="flex flex-col items-center justify-center h-full">
+        <Card className="p-4 flex flex-col items-center justify-center">
+          <h1 className="text-2xl font-medium">Проект не выбран</h1>
+          <p>Создайте, или подключитесь к новому проекту</p>
+          <div className="flex flex-row gap-2">
+            <Button>Создать проект</Button>
+            <Button>Подключиться</Button>
+          </div>
+        </Card>
       </div>
     </ProtectedPageLayout>
   );

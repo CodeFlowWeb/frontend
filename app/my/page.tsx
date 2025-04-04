@@ -59,13 +59,13 @@ const recentActivity = [
 
 export default async function Profile() {
   const session = await auth();
-  if (!session?.user) return redirect("/auth");
+  if (!session?.user) return redirect("/auth?error=not-authenticated");
 
   return (
     <ProtectedPageLayout activePage="my">
       <div className="flex flex-col w-full max-w-6xl mx-auto gap-8 p-6">
         {/* Шапка профиля */}
-        <section className="flex items-center justify-between">
+        <section className="flex flex-col md:flex-row items-center justify-between">
           <div className="flex gap-4 items-center">
             <Avatar className="w-20 h-20">
               <AvatarImage src={session.user.image || ""} />
@@ -82,7 +82,7 @@ export default async function Profile() {
               </p>
             </div>
           </div>
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-col md:flex-row gap-2 mt-4 md:mt-0">
             <SettingsButton />
             <Button variant="outline">
               <Calendar className="w-4 h-4 mr-2" />
