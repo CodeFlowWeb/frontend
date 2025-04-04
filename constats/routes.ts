@@ -7,6 +7,8 @@ interface Routes {
   d: {
     title: string;
     url: string;
+    createproject: RouteType;
+    connectproject: RouteType;
     greeting: RouteType;
     settings: RouteType;
     subscription: RouteType;
@@ -29,6 +31,14 @@ export const routes: Routes = {
     greeting: {
       title: "Приветствие",
       url: "/d/greeting",
+    },
+    createproject: {
+      title: "Новый проект",
+      url: "/d/create-project",
+    },
+    connectproject: {
+      title: "Присоединиться к проекту",
+      url: "/d/connect-project",
     },
     settings: {
       title: "Настройки",
