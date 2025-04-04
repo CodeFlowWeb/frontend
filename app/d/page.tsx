@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import RedirectButton from "@/components/redirect-button";
 import { Card } from "@/components/ui/card";
 import ProtectedPageLayout from "@/layouts/PageLayout";
 
@@ -10,8 +10,12 @@ export default async function Page() {
           <h1 className="text-2xl font-medium">Проект не выбран</h1>
           <p>Создайте, или подключитесь к новому проекту</p>
           <div className="flex flex-row gap-2">
-            <Button>Создать проект</Button>
-            <Button>Подключиться</Button>
+            <RedirectButton redirectUrl="d/create-project">
+              Создать проект
+            </RedirectButton>
+            <RedirectButton redirectUrl="d/connect-project">
+              Присоедениться к проекту
+            </RedirectButton>
           </div>
         </Card>
       </div>

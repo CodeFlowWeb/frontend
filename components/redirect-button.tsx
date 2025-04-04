@@ -1,3 +1,5 @@
+"use client";
+
 import { redirect } from "next/navigation";
 import { Button } from "./ui/button";
 
@@ -18,7 +20,7 @@ export default function RedirectButton({
 
   return (
     <Button onClick={handleClick} {...props}>
-      Создать проект
+      {children}
     </Button>
   );
 }
